@@ -90,11 +90,12 @@ console.log(a) prints [1, 2, 3, 4]
 
 const append = (arr1, arr2) => {
   // Solution code here...
-  let a 
-    for(let i=0;i<arr2.lenght;i++){
-a = arr2[i];
-arr1.push(a);
+  
+    for(let i=0;i<arr2.length;i++){
+        let a=arr2[i];
+        arr1.push(a);
     }
+    
   
     
 
