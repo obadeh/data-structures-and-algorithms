@@ -14,6 +14,11 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
 
 const getCourseKeys = (obj) => {
   // Solution code here...
+  let arr=[];
+  for(let prop in obj){
+      arr.push(prop)
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -71,6 +76,9 @@ let characters = [
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
+  for(let i=0;i<arr.length;i++){
+      houses.push(arr[i].house);
+  }
   return houses;
 };
 
