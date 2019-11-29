@@ -10,6 +10,8 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 
 const firstLetters = (arr) => {
   // Solution code here...
+  let first = arr.map(str=> str.charAt(0))
+  return first ;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -22,6 +24,8 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 
 const findHappiness = (arr) => {
   // Solution code here...
+  let newArr=arr.filter(ele => ele.includes(':)'))
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -34,6 +38,11 @@ For example, (123) 456-7890 returns 1234567890
 
 const standardizePhoneNumbers = (arr) => {
   // Solution code here...
+  let newArr=arr.map((val) =>{
+    return val.substring(1,4)+val.substring(6,9)+val.substring(10)
+  })
+  
+  return newArr ;
 };
 
 /* ------------------------------------------------------------------------------------------------
