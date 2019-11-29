@@ -10,6 +10,8 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 
 const toTitleCase = (arr) => {
   // Solution code here...
+  let newArr=  arr.map(string => string.charAt(0).toUpperCase()+string.slice(1))
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -85,6 +87,10 @@ let starWarsData = [{
 
 let biggerThanLuke = (arr) => {
   // Solution code here...
+  let newArr=[];
+  arr.forEach(obj=> parseInt(obj.mass) > parseInt(arr[0].mass) ? newArr.push(obj.name) : null)
+  newArr = newArr.join(' - ');
+  return newArr
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -103,6 +109,12 @@ This data could be sorted by name or price.
 
 const sortBy = (property, arr) => {
   // Solution code here...
+  let newArr=arr.sort((a,b)=> {
+    let f=parseInt(a[property]);
+    let s=parseInt(b[property]);
+   return  f> s;
+  })
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -119,6 +131,8 @@ https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
 // Solution code here...
+const regex = /^(https:\/\/)/g;
+  return regex.test(url)
 };
 
 /* ------------------------------------------------------------------------------------------------
