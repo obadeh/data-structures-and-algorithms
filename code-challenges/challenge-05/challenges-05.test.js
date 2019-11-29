@@ -14,11 +14,10 @@ For example, if the input is 'Welcome', the output will be:
 ------------------------------------------------------------------------------------------------ */
 
 const howMuchPencil = (str) => {
-  let result = [];
-  for(let i=0;i<str.length;i++){
-      result.push(str.slice(i,str.length));
+  let result = [str];
+  for(let i=0; i<str.length; i++){
+    result.push(result[i].substring(1))
   }
-  // Solution code here...
   return result;
 };
 
@@ -32,6 +31,7 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 
 const wordsToCharList = (arr) => {
   // Solution code here...
+  return arr.split('');
 };
 
 
@@ -93,6 +93,13 @@ You may also use other string or array methods.
 const splitFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  let temp = [];
+  for(let i=0; i<recipe.ingredients.length;i++){
+    temp = [];
+    temp =(recipe.ingredients[i].split(' '));
+    temp = (temp.slice(2));
+    result.push(temp.join(' '));
+  }
   return result;
 };
 
@@ -109,6 +116,13 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 const stepActions = (recipe) => {
   let result = [];
   // Solution code here...
+  let temp = [];
+  for(let i=0; i<recipe.steps.length;i++){
+    temp = [];
+    temp =(recipe.steps[i].split(' '));
+    console.log(temp)
+    result.push(temp.shift());
+  }
   return result;
 };
 
@@ -146,6 +160,7 @@ removeLastCharacters('Gregor', 9) returns ''
 
 const removeLastCharacters = (str, numberOfCharacters) => {
   // Solution code here...
+  return str.slice(0,str.length-numberOfCharacters)
 };
 
 
