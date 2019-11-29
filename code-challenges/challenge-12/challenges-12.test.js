@@ -24,7 +24,17 @@ const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
   // Solution code here...
-
+  let newArr=[];
+  hoursOpen.forEach((hr,idx) =>{
+    let holder = 0;
+    stores.reduce((acc,val)=>{
+      acc+=val[idx];
+      holder = acc
+      return acc
+    },0)
+    newArr.push(holder)
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -39,6 +49,9 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 
 const salesData = (hours, data) => {
   // Solution code here...
+  var result = [];
+  hours.forEach((hr, i) => result.push({sales:data[i]+' cookies', time: hr}));
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -61,6 +74,7 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
+  return arr[2].items[1].quantity
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -83,6 +97,11 @@ The top row of the board is considered row zero and row numbers increase as they
 
 const battleship = (board, row, col) => {
   //  Solution code here...
+  if(board[row][col]=== '#'){
+    return 'hit'
+  }else{
+    return 'miss'
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -95,6 +114,11 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 
 const calculateProduct = (numbers) => {
   // Solution code here...
+  let product= numbers.reduce((acc, pair)=>{
+    acc = acc*(pair[0]*pair[1])
+    return acc
+  },1);
+  return product;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -115,6 +139,18 @@ const weeklyTemperatures = [
 
 const averageDailyTemperature = (weather) => {
   // Solution code here...
+  let vals = 0;
+  let toat = 0;
+  weather.forEach(week =>{
+    vals+=1
+    let arrTote = week.reduce((acc, temp, idx)=>{
+      vals+=1
+      acc+=temp
+      return acc
+    })
+    toat+=arrTote;
+  });
+  return toat/vals;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -136,6 +172,20 @@ let lowestWeeklyTemperatureData = [
 
 const lowestWeeklyAverage = (weather) => {
   // Solution code here...
+  let lowestTemp = 0;
+  weather.forEach(week =>{
+    let current = week.reduce((acc, temp, idx)=>{
+      if(idx < week.length-1){
+        acc+=temp
+        return acc
+      }else{
+        acc+=temp
+        return acc/week.length;
+      }
+    },0)
+    lowestTemp === 0 ? lowestTemp = current : current<lowestTemp ? lowestTemp = current : null;
+  },0)
+  return lowestTemp
 };
 
 /* ------------------------------------------------------------------------------------------------
