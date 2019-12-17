@@ -156,6 +156,28 @@ const meetings = [
 
 const sortMeetingsByDay = (arr) => {
   // Solution code here...
+
+arr.forEach((meet)=>{
+  if(meet.dayOfWeek=="Monday"){meet.dayOfWeek=0}
+  if(meet.dayOfWeek=="Tuesday"){meet.dayOfWeek=1}
+  if(meet.dayOfWeek=="Wednesday"){meet.dayOfWeek=2}
+  if(meet.dayOfWeek=="Thursday"){meet.dayOfWeek=3}
+  if(meet.dayOfWeek=="Friday"){meet.dayOfWeek=4}
+  if(meet.dayOfWeek=="Saturday"){meet.dayOfWeek=5}
+  if(meet.dayOfWeek=="Sunday"){meet.dayOfWeek=6}
+})
+  arr.sort((a,b)=>a.dayOfWeek > b.dayOfWeek)
+
+ arr.forEach((meet)=>{
+  if(meet.dayOfWeek==0){meet.dayOfWeek="Monday"}
+  if(meet.dayOfWeek==1){meet.dayOfWeek="Tuesday"}
+  if(meet.dayOfWeek==2){meet.dayOfWeek="Wednesday"}
+  if(meet.dayOfWeek==3){meet.dayOfWeek="Thursday"}
+  if(meet.dayOfWeek==4){meet.dayOfWeek="Friday"}
+  if(meet.dayOfWeek==5){meet.dayOfWeek="Saturday"}
+  if(meet.dayOfWeek==6){meet.dayOfWeek="Sunday"}
+})
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -170,6 +192,17 @@ You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
 
 const sortSchedule = (arr) => {
   // Solution code here...
+  arr.forEach((meet,ind,array)=>{
+    if(meet.dayOfWeek=="Monday"){array.sort((a,b)=>a.start>b.start)}
+    if(meet.dayOfWeek=="Tuesday"){array.sort((a,b)=>a.start>b.start)}
+    if(meet.dayOfWeek=="Wednesday"){array.sort((a,b)=>a.start>b.start)}
+    if(meet.dayOfWeek=="Thursday"){array.sort((a,b)=>a.start>b.start)}
+    if(meet.dayOfWeek=="Friday"){array.sort((a,b)=>a.start>b.start)}
+    if(meet.dayOfWeek=="Saturday"){array.sort((a,b)=>a.start>b.start)}
+    if(meet.dayOfWeek=="Sunday"){array.sort((a,b)=>a.start>b.start)}
+  })
+  return arr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
