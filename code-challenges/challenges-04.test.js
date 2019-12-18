@@ -44,7 +44,16 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
-};
+  let regex = /^[A-J]/g;
+  let newArr = [];
+  arr.forEach(element => {
+    if(element.match(regex)) {
+      newArr.push(element);
+    }
+  });
+  return newArr;
+}
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -59,8 +68,13 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-  // Solution code here...
+    // Solution code here...
+
+  let regex = /^(\bo?O?)(ct)(ober)?$/g;
+  let Tru = regex.test(input)
+  return Tru;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -73,9 +87,11 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 ------------------------------------------------------------------------------------------------ */
 
 const noPunctuation = str => {
-  // Solution code here...
-};
+    // Solution code here...
 
+  let validator = /\w+\s/g;
+  return str.match(validator)
+}
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
@@ -90,8 +106,11 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 
 let hangman = (str) => {
   // Solution code here...
+  
+  let validator = /[aeiou]/ig;
+  return str.replace(validator, '_');
+  
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
